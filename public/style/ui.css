@@ -1,0 +1,162 @@
+html {
+    background: rgb(0,160,200);
+}
+.topbar {
+    width: calc(100% - 32px);
+    height: 72px;
+    line-height: 72px;
+    color: #FFF;
+    font-size: 32px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-left: 32px;
+    background: rgb(0,160,200);
+    z-index: 999;
+    text-shadow: 0 0 32px rgba(0,0,0,0.8);
+    transition-duration: 1s;
+}
+
+.topbar::before {
+    content: "HelloChat";
+}
+
+.topbarfull {
+    background: rgb(0,200,240);
+    box-shadow: 0 0 64px rgba(0,0,0,0.5);
+}
+
+.login {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0px;
+    transition-duration: 1s;
+    z-index: 1000;
+}
+
+.loginhidden {
+    transform: translateY(100%) scale(0);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.login .container {
+    background: transparent;
+    width: 320px;
+    height: 160px;
+    padding: 16px;
+    position: fixed;
+    top: calc(50% - 128px);
+    left: calc(50% - 160px - 16px);
+    border-radius: 4px;
+}
+
+.login .container .title {
+    display: inline-block;
+    color: #FFF;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-size: 20px;
+    text-shadow: 0 0 32px rgba(0,0,0,0.5);
+}
+
+.login .container .title:after {
+    content: "登录到HelloChat";
+}
+
+.login .container .errormsg {
+    display: inline-block;
+    color: #F00;
+    font-weight: bold;
+    text-shadow: 0 0 16px rgba(0,0,0,0.4);
+    margin-left: 16px;
+}
+
+.login .container #loginNickname {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background: #FFF;
+    border: none;
+    border-radius: 4px;
+    line-height: 18px;
+    padding: 8px;
+    outline: none;
+    width: calc(100% - 12px);
+    transition-duration: 0.25s;
+    box-shadow: 0 0 16px rgba(0,0,0,0.2);
+}
+
+.login .container #loginNickname:hover, .login .container #loginNickname:focus {
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 0 32px rgba(0,0,0,0.5);
+}
+
+.login .container #loginbtn {
+    cursor: pointer;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border: none;
+    background: rgba(0,0,0,0.2);
+    padding: 8px;
+    color: #FFF;
+    line-height: 14px;
+    font-size: 14px;
+    border-radius: 4px;
+    outline: none;
+    transition-duration: 0.25s;
+    float: right;
+}
+
+.login .container #loginbtn:hover {
+    background: rgba(0,0,0,0.5);
+}
+
+.login .container #loginbtn:after {
+    content: "登录";
+}
+
+.sidebar {
+    background: rgb(0,200,240);
+    position: fixed;
+    z-index: 500;
+    top: 72px;
+    left: 0;
+    width: 20%;
+    min-width: 192px;
+    height: calc(100% - 72px);
+    transform: scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition-duration: 0.5s;
+}
+
+.sidebarfull {
+    transform: none;
+    opacity: 1;
+    pointer-events: unset;
+    box-shadow: 0 0 32px rgba(0,0,0,0.5);
+}
+
+.mainbar {
+    background: #FFF;
+    position: fixed;
+    z-index: 700;
+    top: 72px;
+    right: 0;
+    width: 80%;
+    max-width: calc(100% - 192px);
+    height: calc(100% - 72px);
+    transform: scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition-duration: 0.5s;
+}
+
+.mainbarfull {
+    transform: none;
+    opacity: 1;
+    pointer-events: unset;
+    box-shadow: 0 0 32px rgba(0,0,0,0.5);
+}
