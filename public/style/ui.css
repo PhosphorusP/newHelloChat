@@ -1,6 +1,11 @@
+* {
+    font-family: Arial, Helvetica, '黑体', sans-serif!important;
+}
+
 html {
     background: rgb(0,160,200);
 }
+
 .topbar {
     width: calc(100% - 32px);
     height: 72px;
@@ -117,6 +122,33 @@ html {
     content: "登录";
 }
 
+.login .container #status {
+    cursor: pointer;
+    margin-top: 21px;
+    margin-bottom: 16px;
+    margin-right: 24px;
+    border: none;
+    width: 20px;
+    height: 20px;
+    color: #FFF;
+    line-height: 14px;
+    font-size: 14px;
+    border-radius: 16px;
+    outline: none;
+    transition-duration: 0.25s;
+    float: right;
+}
+
+.login .container #status[status="normal"] {
+    background: #0D0;
+    box-shadow: 0 0 16px #0D0;
+}
+
+.login .container #status[status="invisible"] {
+    background: #FD0;
+    box-shadow: 0 0 16px #FD0;
+}
+
 .sidebar {
     background: rgb(0,200,240);
     position: fixed;
@@ -130,6 +162,7 @@ html {
     opacity: 0;
     pointer-events: none;
     transition-duration: 0.5s;
+    transition-delay: 0.5s;
 }
 
 .sidebarfull {
@@ -152,6 +185,7 @@ html {
     opacity: 0;
     pointer-events: none;
     transition-duration: 0.5s;
+    transition-delay: 0.5s;
 }
 
 .mainbarfull {

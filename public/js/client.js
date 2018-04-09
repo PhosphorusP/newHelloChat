@@ -3,9 +3,12 @@ window.onload = function() {
 }
 var socket = io.connect('/'); 
 socket.on('connect', function () {
-    console.log('Connected to the server successfully.')
+    console.log('%cConnected to the server successfully.','color: #080');
     socket.on('loginSuccess', function(data) {
-        console.log('Login Success! The key is: ' + data.key);
+        console.log('%cLogin success!', 'color: #080');
+        console.log('Your public key is: %c' + data.keys.public + '.', 'color: #00F')
+        console.log('And your private key is: %c' + data.keys.private + '.', 'color: #00F')
+        console.log('Hash of your client is: %c' + data.fromHash + '.', 'color: #00F');
         hideLogin();
     }); 
     socket.on('loginFailed', function(data) {

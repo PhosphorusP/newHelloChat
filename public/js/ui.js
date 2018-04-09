@@ -7,6 +7,10 @@ function uiready() {
     document.querySelector('#loginNickname').addEventListener('keydown', function(e) {
         if(e.keyCode == 13) document.querySelector('#loginbtn').click()
     });
+    document.querySelector('.login .container #status').addEventListener('click', function() {
+        if(document.querySelector('.login .container #status').getAttribute('status')=='normal') document.querySelector('.login .container #status').setAttribute('status','invisible');
+        else document.querySelector('.login .container #status').setAttribute('status','normal');
+    });
 }
 function hideLogin() {
     document.querySelector('.login').setAttribute('class','login loginhidden');
