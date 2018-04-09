@@ -73,6 +73,7 @@ io.on('connection', function (socket) {
         //返回登录数据
         socket.emit('loginSuccess', {
             uuid: usr.uuid,
+            socketID: socket.id,
             fromHash: socket.fromHash
         });
     })

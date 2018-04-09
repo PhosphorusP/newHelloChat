@@ -3,7 +3,8 @@
 }
 
 html {
-    background: rgb(0,160,200);
+    background: rgb(0,80,96);
+    user-select: none;
 }
 
 .topbar {
@@ -16,10 +17,11 @@ html {
     top: 0;
     left: 0;
     padding-left: 32px;
-    background: rgb(0,160,200);
+    background: rgb(0,80,96);
     z-index: 999;
     text-shadow: 0 0 32px rgba(0,0,0,0.8);
     transition-duration: 1s;
+    transition-delay: 0.5s;
 }
 
 .topbar::before {
@@ -29,6 +31,50 @@ html {
 .topbarfull {
     background: rgb(0,200,240);
     box-shadow: 0 0 64px rgba(0,0,0,0.5);
+}
+
+.topbar .toast {
+    display: inline-block;
+    position: fixed;
+    font-size: 16px;
+    line-height: 72px;
+    margin-left: 48px;
+    opacity: 0;
+    overflow: hidden;
+    text-shadow: 0 0 16px rgba(0,0,0,0.4);
+    animation-name: none;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.topbar .toastIn {
+    animation-name: toastIn;
+}
+
+.topbar .toastOut {
+    animation-name: toastOut;
+}
+
+@keyframes toastIn {
+    from {
+        transform: translateY(-16px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes toastOut {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(16px);
+        opacity: 0;
+    }
 }
 
 .login {
@@ -75,7 +121,7 @@ html {
     display: inline-block;
     color: #F00;
     font-weight: bold;
-    text-shadow: 0 0 16px rgba(0,0,0,0.4);
+    text-shadow: 0 0 16px #000;
     margin-left: 16px;
 }
 
@@ -135,18 +181,18 @@ html {
     font-size: 14px;
     border-radius: 16px;
     outline: none;
-    transition-duration: 0.25s;
+    transition-duration: 0.5s;
     float: right;
 }
 
 .login .container #status[status="normal"] {
     background: #0D0;
-    box-shadow: 0 0 16px #0D0;
+    box-shadow: 0 0 16px #0D0,0 0 0 transparent inset;
 }
 
 .login .container #status[status="invisible"] {
     background: #FD0;
-    box-shadow: 0 0 16px #FD0;
+    box-shadow: 0 0 0px transparent,0 0 8px #000 inset;
 }
 
 .sidebar {

@@ -12,9 +12,16 @@ function uiready() {
         else document.querySelector('.login .container #status').setAttribute('status','normal');
     });
 }
+
 function hideLogin() {
     document.querySelector('.login').setAttribute('class','login loginhidden');
     document.querySelector('.topbar').setAttribute('class','topbar topbarfull');
     document.querySelector('.sidebar').setAttribute('class','sidebar sidebarfull');
     document.querySelector('.mainbar').setAttribute('class','mainbar mainbarfull');
+}
+
+function showToast(str) {
+    document.querySelector('.toast').innerHTML = str;
+    document.querySelector('.toast').setAttribute('class','toast toastIn');
+    setTimeout('document.querySelector(\'.toast\').setAttribute(\'class\',\'toast toastOut\')',2000)
 }
