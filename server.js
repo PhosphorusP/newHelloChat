@@ -53,10 +53,7 @@ io.on('connection', function (socket) {
         var usr = {
             nickname: data.nickname,
             status: data.status,
-            keys: {
-                private: secure.uuid(),
-                public: secure.uuid(),
-            },
+            uuid: secure.uuid(),
             socketID: socket.id
         }
         //添加到在线用户列表
@@ -75,7 +72,7 @@ io.on('connection', function (socket) {
         });
         //返回登录数据
         socket.emit('loginSuccess', {
-            keys: usr.keys,
+            uuid: usr.uuid,
             fromHash: socket.fromHash
         });
     })
