@@ -33,6 +33,13 @@ io.on('connection', function (socket) {
 
     //处理用户登录
     socket.on('login', function (data) {
+        //登录失败：用户名为空
+        if (data.nickname.length < 1) {
+            socket.emit('loginFailed', {
+                reason: 'nickEmpty'
+            });
+            return;
+        }
         //登录失败：用户名过长
         if (data.nickname.length > 32) {
             socket.emit('loginFailed', {
