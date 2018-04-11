@@ -1,5 +1,6 @@
 * {
     font-family: Arial, Helvetica, '黑体', sans-serif!important;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -220,29 +221,6 @@ html {
     box-shadow: 0 0 32px rgba(0,0,0,0.5);
 }
 
-.mainbar {
-    background: #FFF;
-    position: fixed;
-    z-index: 700;
-    top: 72px;
-    right: 0;
-    width: 80%;
-    max-width: calc(100% - 192px);
-    height: calc(100% - 72px);
-    transform: scale(0.5);
-    opacity: 0;
-    pointer-events: none;
-    transition-duration: 0.5s;
-    transition-delay: 0.5s;
-}
-
-.mainbarfull {
-    transform: none;
-    opacity: 1;
-    pointer-events: unset;
-    box-shadow: 0 0 32px rgba(0,0,0,0.5);
-}
-
 .sidebar .dialog {
     background: rgb(0,200,240);
     padding: 16px;
@@ -251,16 +229,16 @@ html {
     color: #FFF;
     opacity: 0.9;
     transition-duration: 0.5s;
-    position: aabsolute;
+    position: absolute;
     overflow: hidden;
     animation: newDialog 0.5s forwards;
 }
 
 .sidebar .newdialog {
     height: 0;
-        padding-top: 0;
-        padding-bottom: 0;
-        box-shadow: 0 0 32px rgba(0,0,0,0.8) inset;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-shadow: 0 0 32px rgba(0,0,0,0.8) inset;
 }
 
 /*Height: 68px*/
@@ -289,3 +267,70 @@ html {
     opacity: 0.8;
     margin-top: 4px;
 }
+
+.mainbar {
+    background: #FFF;
+    position: fixed;
+    z-index: 700;
+    top: 72px;
+    right: 0;
+    width: 80%;
+    max-width: calc(100% - 192px);
+    height: calc(100% - 72px - 192px);
+    transform: scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition-duration: 0.5s;
+    transition-delay: 0.5s;
+}
+
+.mainbarfull {
+    transform: none;
+    opacity: 1;
+    pointer-events: unset;
+    box-shadow: 0 0 32px rgba(0,0,0,0.5);
+}
+
+.inputbar {
+    background: #EEE;
+    width: 80%;
+    max-width: calc(100% - 192px);
+    height: 192px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 800;
+    transform: scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition-duration: 0.5s;
+    transition-delay: 0.5s;
+}
+
+.inputbarfull {
+    transform: none;
+    opacity: 1;
+    pointer-events: unset;
+    box-shadow: 0 0 32px rgba(0,0,0,0.5);
+}
+
+.inputbar .funcs {
+    width: (100% - 16px);
+    height: 36px;
+    font-size: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.inputbar .funcs .icon {
+    display: inline-block;
+    width: 28px;
+    height: 36px;
+    margin: 0!important;
+    background-size: 24px 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.icon[func="emoji"] {background-image: url(../images/emoji.svg);}
+.icon[func="chat"] {background-image: url(../images/chat.svg);}

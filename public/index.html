@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google" value="notranslate" />
     <title>HelloChat</title>
     <script src="/source/socket.io.slim.js"></script>
     <script src="/js/client.js"></script>
@@ -26,17 +27,14 @@
             <div id="status" status="normal"></div>
         </div>
     </div>
-    <div class="sidebar">
-        <div class="dialog selected">
-                <div class="name">聊天室</div>
-                <div class="preview">David750:病名为爱爱爱爱爱爱爱爱爱爱爱爱爱爱</div>
-            </div>
-            <div class="dialog">
-                <div class="name">David750</div>
-                <div class="preview">病名为爱爱爱爱爱爱爱爱爱爱爱爱爱爱</div>
-            </div>
-        </div>
+    <div class="sidebar"></div>
     <div class="mainbar"></div>
+    <div class="inputbar">
+        <div class="funcs">
+            <div class="icon" func="emoji"></div>
+            <div class="icon" func="chat"></div>
+        </div>
+    </div>
 </body>
 
 

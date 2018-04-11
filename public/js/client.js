@@ -68,8 +68,11 @@ function refreshMlist() {
             document.querySelector('.sidebar #dlg' + mList[i].uuid + ' .preview').innerHTML = mList[i].message;
         }
     }
+}
+
+function refreshMessageList() {
     for(i=mList.length-1;i>=0;i--) {
         document.querySelector('.sidebar #dlg' + mList[i].uuid).setAttribute('class','dialog');
-        document.querySelector('.sidebar #dlg' + mList[i].uuid).style.top = ((mList.length - i)*68) + 'px';
+        document.querySelector('.sidebar #dlg' + mList[i].uuid).style.top = ((mList.length -1 - i)*68) + 'px';
     }
 }

@@ -19,10 +19,11 @@ function hideLogin() {
     document.querySelector('.topbar').setAttribute('class','topbar topbarfull');
     document.querySelector('.sidebar').setAttribute('class','sidebar sidebarfull');
     document.querySelector('.mainbar').setAttribute('class','mainbar mainbarfull');
+    document.querySelector('.inputbar').setAttribute('class','inputbar inputbarfull');
 }
 
 function showToast(str) {
     document.querySelector('.toast').innerHTML = str;
     document.querySelector('.toast').setAttribute('class','toast toastIn');
-    setTimeout('document.querySelector(\'.toast\').setAttribute(\'class\',\'toast toastOut\')',2000)
+    setTimeout('document.querySelector(\'.toast\').setAttribute(\'class\',\'toast toastOut\')',2000);
 }
