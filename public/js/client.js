@@ -8,7 +8,9 @@ uList['bbbbb']='bbbbb';
 window.onload = function() {
     uiready();
     initToasts();
+    initMessages();
 }
+
 var socket = io.connect('/'); 
 socket.on('connect', function () {
     console.log('%cConnected to the server successfully.','color: #080');
@@ -40,6 +42,10 @@ function initToasts() {
     setInterval('refreshToast()',3000);
 }
 
+function initMessages() {
+    setInterval('refreshMessageList()',200);
+}
+
 function refreshToast() {
     if(toasts.length>0) {
         showToast(toasts[0]);
@@ -58,12 +64,13 @@ function pushMlist(message, uuid) {
         message: message,
         uuid: uuid
     });
+    refreshMlist();
 }
 
 function refreshMlist() {
     for(i=0;i<mList.length;i++) {
         if(document.querySelector('.sidebar #dlg' + mList[i].uuid)==null) {
-            document.querySelector('.sidebar').innerHTML += '<div class="dialog newdialog" id="dlg' + mList[i].uuid +'"><div class="name">' + uList[mList[i].uuid] + '</div><div class="preview">' + mList[i].message + '</div></div>';
+            document.querySelector('.sidebar').innerHTML += '<div class="dialog newdialog" id="dlg' + mList[i].uuid +'" onmousedown="selectDialog(this)"><div class="name">' + uList[mList[i].uuid] + '</div><div class="preview">' + mList[i].message + '</div></div>';
         } else {
             document.querySelector('.sidebar #dlg' + mList[i].uuid + ' .preview').innerHTML = mList[i].message;
         }
@@ -71,8 +78,19 @@ function refreshMlist() {
 }
 
 function refreshMessageList() {
+    if(document.querySelectorAll('.sidebar .newdialog').length==1) document.querySelectorAll('.sidebar .newdialog')[0].setAttribute('class','dialog selected');
+    for(i=0;i<document.querySelectorAll('.sidebar .newdialog').length;i++) {
+        document.querySelectorAll('.sidebar .newdialog')[i].setAttribute('class','dialog');
+    }
     for(i=mList.length-1;i>=0;i--) {
-        document.querySelector('.sidebar #dlg' + mList[i].uuid).setAttribute('class','dialog');
         document.querySelector('.sidebar #dlg' + mList[i].uuid).style.top = ((mList.length -1 - i)*68) + 'px';
     }
+}
+
+function selectDialog(obj) {
+    if(obj == null) return false;
+    for(i=0;i<document.querySelectorAll('dialog').length;i++) {
+        document.querySelectorAll('dialog')[i].setAttribute('class','dialog');
+    }
+    obj.setAttribute('class','dialog selected');
 }
