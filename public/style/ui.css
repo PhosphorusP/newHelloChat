@@ -320,8 +320,9 @@ html {
 }
 
 .inputbar .funcs {
+    abackground: rgba(255, 255, 255, 1);
     width: calc(100% - 16px);
-    height: 36px;
+    height: 32px;
     font-size: 0;
     padding-left: 8px;
     padding-right: 8px;
@@ -330,11 +331,20 @@ html {
 .inputbar .funcs .icon {
     display: inline-block;
     width: 28px;
-    height: 36px;
-    margin: 0!important;
+    height: 28px;
+    margin: 0;
+    margin-top: 2px;
     background-size: 24px 24px;
-    background-position: center;
+    opacity: 0.9;
+    background-position: center bottom;
     background-repeat: no-repeat;
+    transition-duration: 0.25s;
+    cursor: pointer;
+}
+
+.inputbar .funcs .icon:hover {
+    opacity: 0.5;
+    transform: scale(1.2,1.2);
 }
 
 .funcs .icon[func="emoji"] {background-image: url(../images/emoji.svg);}
@@ -347,16 +357,14 @@ html {
     font-size: 16px;
     margin-left: 8px;
     margin-right: 8px;
-    cursor: pointer;
-}
-
-.inputbar .input:focus {
+    margin-top: 4px;
     cursor: text;
 }
 
 .inputbar .emojis {
     width: calc(100% - 16px);
     height: calc(100% - 16px);
+    margin-top: 8px;
     padding: 8px;
     background: #FFF;
     box-shadow: 0 0 64px rgba(0, 0, 0, 0.5);
