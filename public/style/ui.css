@@ -137,6 +137,7 @@ html {
     line-height: 18px;
     padding: 8px;
     outline: none;
+    cursor: text;
     width: calc(100% - 12px);
     transition-duration: 0.25s;
     box-shadow: 0 0 16px rgba(0,0,0,0.2);
@@ -145,6 +146,10 @@ html {
 .login .container #loginNickname:hover, .login .container #loginNickname:focus {
     background: rgba(255,255,255,0.95);
     box-shadow: 0 0 32px rgba(0,0,0,0.5);
+}
+
+.login .container #loginNickname:focus {
+    cursor: text;
 }
 
 .login .container #loginbtn {
@@ -332,10 +337,10 @@ html {
     background-repeat: no-repeat;
 }
 
-.icon[func="emoji"] {background-image: url(../images/emoji.svg);}
-.icon[func="chat"] {background-image: url(../images/chat.svg);}
+.funcs .icon[func="emoji"] {background-image: url(../images/emoji.svg);}
+.funcs .icon[func="chat"] {background-image: url(../images/chat.svg);}
 
-.input {
+.inputbar .input {
     outline: none;
     width: calc(100% - 16px);
     height: calc(100% - 36px);
@@ -345,11 +350,11 @@ html {
     cursor: pointer;
 }
 
-.input:focus {
+.inputbar .input:focus {
     cursor: text;
 }
 
-.emojis {
+.inputbar .emojis {
     width: calc(100% - 16px);
     height: calc(100% - 16px);
     padding: 8px;
@@ -365,7 +370,7 @@ html {
     transition-duration: 0.5s;
 }
 
-.emoji {
+.emojis .emoji {
     display: inline-block;
     width: 24px;
     height: 24px;
