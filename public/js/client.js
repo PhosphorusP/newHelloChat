@@ -9,6 +9,7 @@ window.onload = function() {
     uiready();
     initToasts();
     initMessages();
+    initBroser();
 }
 
 //连接到服务器
