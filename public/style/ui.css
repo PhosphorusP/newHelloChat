@@ -137,7 +137,7 @@ html {
     line-height: 18px;
     padding: 8px;
     outline: none;
-    cursor: text;
+    cursor: pointer;
     width: calc(100% - 12px);
     transition-duration: 0.25s;
     box-shadow: 0 0 16px rgba(0,0,0,0.2);
